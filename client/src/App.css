@@ -24,6 +24,14 @@ header {
   border-bottom-right-radius: 20px;
 }
 
+.meio{
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  
+}
+
+
 /* Animação de gradiente */
 @keyframes gradientMove {
   0% {background-position:0% 50%;}
@@ -44,7 +52,7 @@ header {
   align-items: center;
   text-decoration: none;
   color: white;
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
 }
 
 .logo:hover {
@@ -62,6 +70,12 @@ header {
   font-weight: bold;
   color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.quadrado{
+  color: black;
+  background-color: green;
+  padding: 20px;
 }
 
 /* Menu estilizado */
@@ -111,7 +125,7 @@ header {
   background: linear-gradient(45deg, #ffd700, #ffae00);
   color: #1e3c72;
   box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   z-index: 1000;
   overflow: hidden;
   display: inline-block;
@@ -137,6 +151,7 @@ header {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
+
 
 /* Responsivo */
 @media (max-width: 768px) {

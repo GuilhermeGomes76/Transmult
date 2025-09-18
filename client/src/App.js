@@ -9,13 +9,10 @@ function App() {
         <div className="header-container">
           {/* Logo (leva para SPTrans) */}
           <a 
-            href="https://lv.sbe.sptrans.com.br/vcw/login.action" 
-            target="_blank" 
-            rel="noopener noreferrer" 
             className="logo"
           >
-            <img src={logoSpTrans} alt="SPTrans" />
-            <span>SPTrans</span>
+            <div className="quadrado"> <p>logo</p> </div>
+            <span>Transmult</span>
           </a>
 
           {/* Menu */}
@@ -29,11 +26,17 @@ function App() {
         </div>
       </header>
 
+      <article>
+        <div className="meio"> 
+          <div className="quadrado"> <p>logo</p> </div>
+          <a href="/conta"> <button> Criar conta </button></a>
+
+        </div>
+      </article>
+
       {/* Botão SPTrans fixo no canto inferior esquerdo */}
       <a 
         href="https://lv.sbe.sptrans.com.br/vcw/login.action" 
-        target="_blank" 
-        rel="noopener noreferrer"
         className="btn-fixed"
       >
         Recarga
