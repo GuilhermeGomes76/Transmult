@@ -1,5 +1,4 @@
 import './App.css';
-import logoSpTrans from './images/spTrans.png';
 
 function App() {
   return (
