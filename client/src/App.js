@@ -1,4 +1,6 @@
 import './App.css';
+import logoMult from './images/logoTransMult.jpg';
+import logoSpTrans from './images/spTrans.png';
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
           <a 
             className="logo"
           >
-            <div className="quadrado"> <p>logo</p> </div>
+            <img src={logoMult} className='imagemMult'/>
             <span>Transmult</span>
           </a>
 
@@ -27,17 +29,20 @@ function App() {
 
       <article>
         <div className="meio"> 
-          <div className="quadrado"> <p>logo</p> </div>
-          <a href="/conta"> <button> Criar conta </button></a>
-
+          <img src={logoMult} className='imagemMult'/>
+          <button className="acessar">Acessar</button>
+          <a href="/conta"><button>Criar conta</button></a>
         </div>
       </article>
+
+
 
       {/* Botão SPTrans fixo no canto inferior esquerdo */}
       <a 
         href="https://lv.sbe.sptrans.com.br/vcw/login.action" 
         className="btn-fixed"
       >
+        <img src={logoSpTrans} className='imagemSpTrans'/>
         Recarga
       </a>
     </div>

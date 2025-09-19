@@ -24,11 +24,69 @@ header {
   border-bottom-right-radius: 20px;
 }
 
-.meio{
+/* =========================
+   AJUSTE PARA CENTRALIZAR NO MEIO DA TELA
+========================= */
+
+.imagemSpTrans {
+  width: 18%;
+  max-width: 80vw;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.imagemMult {
+  width: 30%;
+  max-width: 80vw;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.meio {
+  position: absolute;        /* fixa no meio da tela */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centraliza vertical e horizontal */
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding-top: 10%;
-  
+  gap: 20px;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.meio button,
+.meio a button {
+  width: 200px;
+  max-width: 80vw;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.meio button:hover,
+.meio a button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .quadrado {
+    width: 130px;
+    height: 130px;
+  }
+
+  .meio button,
+  .meio a button {
+    width: 70vw;
+    font-size: 14px;
+  }
 }
 
 
@@ -119,7 +177,7 @@ header {
   bottom: 20px;
   left: 20px;
   text-decoration: none;
-  padding: 12px 22px;
+  padding: 12px 0px 12px 20px;
   border-radius: 30px;
   font-weight: bold;
   background: linear-gradient(45deg, #ffd700, #ffae00);
@@ -128,7 +186,9 @@ header {
   transition: all 0.5s ease;
   z-index: 1000;
   overflow: hidden;
-  display: inline-block;
+  display: flex;           /* Ativa o flexbox */
+  align-items: center;     /* Centraliza verticalmente */
+  gap: 10px;              /* Espaçamento entre o ícone e o texto */
 }
 
 .btn-fixed::before {
