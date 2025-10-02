@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, HashRouter, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import App from './App';
+import Cadastro from './Cadastro';
+import Recarga from './Recarga';
 import './index.css';
-import App from './App.js';  
-import Cadastro from './Cadastro.js';
-import Recarga from './Recarga.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
