@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Transmult/static/css/main.b8ee9c61.css",
-    "main.js": "/Transmult/static/js/main.b7b580db.js",
+    "main.css": "/Transmult/static/css/main.a81f4d33.css",
+    "main.js": "/Transmult/static/js/main.e326ae97.js",
     "static/media/logoTransMult.jpg": "/Transmult/static/media/logoTransMult.03c4140fb59d487a3692.jpg",
     "index.html": "/Transmult/index.html",
-    "main.b8ee9c61.css.map": "/Transmult/static/css/main.b8ee9c61.css.map",
-    "main.b7b580db.js.map": "/Transmult/static/js/main.b7b580db.js.map"
+    "main.a81f4d33.css.map": "/Transmult/static/css/main.a81f4d33.css.map",
+    "main.e326ae97.js.map": "/Transmult/static/js/main.e326ae97.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8ee9c61.css",
-    "static/js/main.b7b580db.js"
+    "static/css/main.a81f4d33.css",
+    "static/js/main.e326ae97.js"
   ]
 }
