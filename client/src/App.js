@@ -11,8 +11,8 @@ function App() {
         <article>
           <div className="meio">
             <img src={logoMult} className="imagemMult" alt="Logo TransMult" />
-            <Link to="#/cadastro" className="acessar">Criar conta</Link>
-            <Link to="#/recarga" className="acessar">Acessar</Link>
+            <Link to="cadastro" className="acessar">Criar conta</Link>
+            <Link to="recarga" className="acessar">Acessar</Link>
           </div>
         </article>
       </div>
