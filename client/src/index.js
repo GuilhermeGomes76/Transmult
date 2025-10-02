@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, HashRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.js';  
@@ -9,12 +9,12 @@ import Recarga from './Recarga.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/recarga" element={<Recarga />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
