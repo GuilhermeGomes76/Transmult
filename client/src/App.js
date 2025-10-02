@@ -1,6 +1,6 @@
 import './App.css';
 import logoMult from './images/logoTransMult.jpg';
-import Cabecalho from '../src/components/cabecalho';
+import Cabecalho from './components/cabecalho';
 import { Link } from 'react-router-dom';
 
 function App() {
