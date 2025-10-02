@@ -1,0 +1,21 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "teste",
+      "cpf": "123",
+      "senhaHash": "8d23cf6c86e834a7aa6eded54c26ce2bb2e74903538c61bdd5d2197997ab2f72"
+    }
+  ],
+  "cartoes": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "numero": "0000-0000-1",
+      "tipo": "Padrão",
+      "operadora": "TransMult",
+      "saldo": 45,
+      "cotas": 0
+    }
+  ]
+}

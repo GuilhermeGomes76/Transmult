@@ -1,0 +1,160 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Header com fundo animado */
+
+
+.meio {
+  position: absolute;        /* fixa no meio da tela */
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centraliza vertical e horizontal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.meio button,
+.meio a button {
+  width: 200px;
+  max-width: 80vw;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.meio button:hover,
+.meio a button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .quadrado {
+    width: 130px;
+    height: 130px;
+  }
+
+  .meio button,
+  .meio a button {
+    width: 70vw;
+    font-size: 14px;
+  }
+}
+
+
+/* Animação de gradiente */
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* Container flex */
+
+
+/* Logo estilizado */
+
+
+.quadrado{
+  color: black;
+  background-color: green;
+  padding: 20px;
+}
+
+.acessar {
+  display: inline-block;
+  width: 150px;           /* mesmo tamanho para todos */
+  padding: 12px 0;        /* altura consistente */
+  background-color: #333; /* cor inicial */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease; /* animação suave */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.acessar:hover {
+  background-color: #555;   /* muda a cor */
+  transform: scale(1.05);   /* leve aumento */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+/* Botão fixo no canto inferior esquerdo */
+.btn-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffd700, #ffae00);
+  color: #1e3c72;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;           /* Ativa o flexbox */
+  align-items: center;     /* Centraliza verticalmente */
+  gap: 10px;              /* Espaçamento entre o ícone e o texto */
+}
+
+.btn-fixed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.btn-fixed:hover::before {
+  left: 125%;
+}
+
+.btn-fixed:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .btn-fixed {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
