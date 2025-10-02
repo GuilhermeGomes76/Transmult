@@ -12,8 +12,8 @@ root.render(
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/recarga" element={<Recarga />} />
+        <Route path="cadastro" element={<Cadastro />} />
+        <Route path="recarga" element={<Recarga />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>
