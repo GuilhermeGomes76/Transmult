@@ -1,0 +1,131 @@
+/* Container principal */
+.Recarga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2rem;
+  }
+  
+  /* Título */
+  .Recarga h2 {
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  /* Formulário de login */
+  .Recarga input[type="text"],
+  .Recarga input[type="password"],
+  .Recarga input[type="number"] {
+    width: 350px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .Recarga input:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+  }
+  
+  /* Botões de login e recarga */
+  .Recarga button {
+    width: 350px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .Recarga button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Botão entrar */
+  .Recarga > button,
+  .Recarga button.login {
+    background-color: #6c63ff;
+    color: white;
+  }
+  
+  .Recarga button.login:hover {
+    background-color: #5750d4;
+  }
+  
+  /* Cartão de informações do usuário */
+  .cartao-info {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cartao-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  
+  .cartao-info p {
+    margin: 0.5rem 0;
+    color: #6c63ff;
+    font-weight: 600;
+  }
+  
+  /* Formulário de recarga */
+  .recarga-form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .recarga-form input {
+    margin-bottom: 1rem;
+  }
+  
+  .recarga-form button {
+    background-color: #6c63ff;
+    color: white;
+  }
+  
+  .recarga-form button:hover {
+    background-color: #5750d4;
+  }
+  
+  /* Botão sair */
+  .logout {
+    background-color: #ff4c4c;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .logout:hover {
+    background-color: #e04343;
+  }
+  
+  /* Mensagem de erro ou sucesso */
+  .Recarga .mensagem {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #000; /* vermelho erro */
+    text-align: center;
+  }
+  

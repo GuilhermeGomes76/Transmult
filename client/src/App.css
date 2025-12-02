@@ -12,6 +12,7 @@ body {
 }
 
 /* Header com fundo animado */
+<<<<<<< HEAD
 header {
   position: relative;
   overflow: hidden;
@@ -45,6 +46,13 @@ header {
 .meio {
   position: absolute;        /* fixa no meio da tela */
   top: 50%;
+=======
+
+
+.meio {
+  position: absolute;        /* fixa no meio da tela */
+  top: 58%;
+>>>>>>> 844dc9c4511b601c219d64411121baab46208c72
   left: 50%;
   transform: translate(-50%, -50%); /* centraliza vertical e horizontal */
   display: flex;
@@ -70,7 +78,11 @@ header {
 .meio button:hover,
 .meio a button:hover {
   transform: scale(1.05);
+<<<<<<< HEAD
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+=======
+  box-shadow: 0 6px 15px rgba(0,0,0,0.10);
+>>>>>>> 844dc9c4511b601c219d64411121baab46208c72
 }
 
 /* =========================
@@ -98,6 +110,7 @@ header {
 }
 
 /* Container flex */
+<<<<<<< HEAD
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -129,6 +142,12 @@ header {
   color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
+=======
+
+
+/* Logo estilizado */
+
+>>>>>>> 844dc9c4511b601c219d64411121baab46208c72
 
 .quadrado{
   color: black;
@@ -136,6 +155,7 @@ header {
   padding: 20px;
 }
 
+<<<<<<< HEAD
 /* Menu estilizado */
 .nav-menu ul {
   display: flex;
@@ -169,6 +189,26 @@ header {
 
 .nav-menu ul li a:hover {
   color: #ffd700;
+=======
+.acessar {
+  display: inline-block;
+  width: 150px;           /* mesmo tamanho para todos */
+  padding: 12px 0;        /* altura consistente */
+  background-color: #333; /* cor inicial */
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease; /* animação suave */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.acessar:hover {
+  background-color: #555;   /* muda a cor */
+  transform: scale(1.05);   /* leve aumento */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+>>>>>>> 844dc9c4511b601c219d64411121baab46208c72
 }
 
 /* Botão fixo no canto inferior esquerdo */
@@ -177,7 +217,11 @@ header {
   bottom: 20px;
   left: 20px;
   text-decoration: none;
+<<<<<<< HEAD
   padding: 12px 0px 12px 20px;
+=======
+  padding: 15px;
+>>>>>>> 844dc9c4511b601c219d64411121baab46208c72
   border-radius: 30px;
   font-weight: bold;
   background: linear-gradient(45deg, #ffd700, #ffae00);
