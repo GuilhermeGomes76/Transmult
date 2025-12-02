@@ -1,6 +1,9 @@
+// Recarga.jsx
 import { useState } from 'react';
 import Cabecalho from './components/cabecalho';
 import './Recarga.css';
+
+const API_BASE = 'http://localhost:5000'; // <--- use essa constante em todo o front
 
 function Recarga() {
   const [nome, setNome] = useState('');
@@ -18,7 +21,7 @@ function Recarga() {
     }
 
     try {
-      const res = await fetch('/api/login', {
+      const res = await fetch(`${API_BASE}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, cpf, senha }),
@@ -27,11 +30,15 @@ function Recarga() {
       const data = await res.json();
 
       if (res.ok) {
-        const cartao = data.cartoes[0]; // Pega sempre o cartão do usuário
+        // garante que existe pelo menos um cartão
+        const cartao = data.cartoes && data.cartoes.length > 0
+          ? data.cartoes[0]
+          : { id: null, saldo: 0 };
+
         setUsuario({
           id: data.usuario.id,
           nome: data.usuario.nome,
-          saldo: cartao.saldo,
+          saldo: Number(cartao.saldo || 0),
           cartaoId: cartao.id,
         });
 
@@ -42,7 +49,7 @@ function Recarga() {
         setUsuario(null);
       }
     } catch (err) {
-      console.error(err);
+      console.error('Erro ao conectar com a API:', err);
       setMensagem('Erro ao conectar com a API.');
       setUsuario(null);
     }
@@ -50,30 +57,42 @@ function Recarga() {
 
   // Recarregar cartão
   const handleRecarga = async () => {
+    if (!usuario || !usuario.cartaoId) {
+      setMensagem('Você precisa entrar com um usuário que possua cartão.');
+      return;
+    }
+
     const valor = parseFloat(valorRecarga);
     if (isNaN(valor) || valor <= 0) {
       setMensagem('Informe um valor válido para recarga.');
       return;
     }
 
+    const novoSaldo = Number(usuario.saldo) + valor;
+
     try {
-      const res = await fetch(`/api/cartoes/${usuario.cartaoId}/saldo`, {
+      const res = await fetch(`${API_BASE}/api/cartoes/${usuario.cartaoId}/saldo`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ saldo: usuario.saldo + valor }),
+        body: JSON.stringify({ saldo: novoSaldo }),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        setUsuario(prev => ({ ...prev, saldo: data.cartao.saldo }));
-        setMensagem(`Recarga de R$: ${valor.toFixed(2)} realizada com sucesso!`);
+        // atualiza saldo local com o valor retornado pelo servidor (se houver)
+        const saldoAtualizado = data.cartao && data.cartao.saldo !== undefined
+          ? Number(data.cartao.saldo)
+          : novoSaldo;
+
+        setUsuario(prev => ({ ...prev, saldo: saldoAtualizado }));
+        setMensagem(`Recarga de R$ ${valor.toFixed(2)} realizada com sucesso!`);
         setValorRecarga('');
       } else {
         setMensagem(data.erro || 'Erro ao realizar a recarga.');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Erro ao conectar com a API:', err);
       setMensagem('Erro ao conectar com a API.');
     }
   };
@@ -111,15 +130,17 @@ function Recarga() {
           <>
             <div className="cartao-info">
               <p><strong>Nome:</strong> {usuario.nome}</p>
-              <p><strong>Saldo:</strong> R$: {usuario.saldo.toFixed(2)}</p>
+              <p><strong>Saldo:</strong> R$ {Number(usuario.saldo).toFixed(2)}</p>
             </div>
 
             <div className="recarga-form">
               <input
-                type="number"   
+                type="number"
                 placeholder="Valor da recarga"
                 value={valorRecarga}
                 onChange={(e) => setValorRecarga(e.target.value)}
+                step="0.01"
+                min="0"
               />
               <button onClick={handleRecarga}>Recargar</button>
             </div>
