@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Cabecalho from './components/cabecalho';
 import './Conta.css';
 
+const API_BASE = import.meta.env.VITE_API_URL;
+
 function Conta() {
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -16,7 +18,7 @@ function Conta() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch(`${API_BASE}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, cpf, senha })
