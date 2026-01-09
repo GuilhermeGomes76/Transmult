@@ -27,11 +27,11 @@ npm install
 npm start
 ```
 
-##🧠 Observações
+## 🧠 Observações
 Projeto desenvolvido para fins educacionais, com foco em aprendizado de React e
 desenvolvimento front-end. Ferramentas de IA foram utilizadas como apoio no aprendizado.
 
-##👨‍💻 Autor
+## 👨‍💻 Autor
 Guilherme Gomes Silva
 GitHub: https://github.com/GuilhermeGomes76
 Email: guilhermegomessilva76@gmail.com
